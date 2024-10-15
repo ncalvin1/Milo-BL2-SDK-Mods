@@ -1,0 +1,145 @@
+{
+    "mods": [
+	{
+	    "name": "Player Randomizer",
+	    "tagline": "Play with randomized skills and class mods.",
+	    "description": [
+		"Fills a player's trees with random skills, and<br/>",
+		"updates class mods to boost skills from the new set.<br/>",
+		"<br/>",
+		"Idea stolen from Abahbob's Cross Class Skill Randomizer.<br/>",
+		"<br/>",
+		"<h3>Usage:</h3><br/>",
+		"From the main menu, under Mods, enable \"Player<br/>",
+		"Randomizer (New Seed)\".  Bring up Options->Mods->Player<br/>",
+		"Randomizer to control how you want to randomize your<br/>",
+		"character.<ul>",
+		"<li>Skill Sources sets which characters to pull skills<br/>",
+		"from.</li>",
+		"<li>Additional Skills lets you include skills that<br/>",
+		"should work despite referencing the wrong Action Skill,<br/>",
+		"as well as skills that may be nonfunctional or badly<br/>",
+		"broken.</li>",
+		"<li>Action Skill determines which character's action<br/>",
+		"skill to assign to yours; note that graphics may be<br/>",
+		"wrong for some character/skill combinations, but the<br/>",
+		"effects should still work correctly.</li>",
+		"<li>Skill Density selects how much to fill in the skill<br/>",
+		"tree - for reference, BL2 character trees are about 60%<br/>",
+		"full, while TPS trees average 65% full.</li>",
+		"<li>Randomizing Tier Points changes how many skill<br/>",
+		"points it takes to unlock the next skill tier.</li>",
+		"<li>Randomize COMs enables modifying the player's<br/>",
+		"classmods to contain skills from the new random tree.</li>",
+		"</ul><br/>",
+		"Once you've made your choices, load your character and<br/>",
+		"start the session as usual.  The next time you launch<br/>",
+		"the game, the Mods menu will show a new enabled entry,<br/>",
+		"\"Effect Randomizer (#)\", where the number is the<br/>",
+		"newly-generated effect seed.  Remember that seed - if<br/>",
+		"the game crashes, you'll need to re-enable that entry."
+	    ],
+	    "types": [ "Gameplay" ],
+	    "supports": [ "BL2", "TPS", "AoDK" ],
+	    "latest": "0.1"
+	},
+	{
+	    "name": "Effect Randomizer",
+	    "tagline": "Lose your knowledge of what does what.",
+	    "description": [
+		"Changes subtle aspects of most game items, so they no<br/>",
+		"longer behave completely as expected.<br/>",
+		"<br/>",
+		"<h3>Alterations:</h3><br/>",
+		"<ul>",
+		"<li>Projectiles may borrow each other's behaviors.  They<br/>",
+		"can make unexpected noises, follow odd paths, or even<br/>",
+		"home.</li>",
+		"<li>Firing modes can lase, split, ricochet, or change<br/>",
+		"speeds.</li>",
+		"<li>Parts have different effects on shield behavior.<br/>",
+		"A common Absorb shield with lucky parts may beat a Sham.</li>",
+		"<li>The same applies to classmods.  With good parts,<br/>",
+		"a high-level mod could potentially boost a skill more<br/>",
+		"than +6.</li>",
+		"<li>Lastly, relics now boost random attributes.  Really<br/>",
+		"want an artifact that improves corrosion damage and <br/>",
+		"movement speed?  It might be out there...<br/>",
+		"<i>Note: relics are not supported on TPS.  Oz kits have<br/>",
+		"enough quirks already.</i></li>",
+		"<h3>Usage:</h3><br/>",
+		"From the main menu, under Mods, enable \"Effect<br/>",
+		"Randomizer (New Seed)\".  Bring up Options->Mods->Effect<br/>",
+		"Randomizer to enable the effects you want to change,<br/>",
+		"then load your character and start the session as usual.<br/>",
+		"The next time you launch the game, the Mods menu will<br/>",
+		"show a new enabled entry, \"Effect Randomizer (#)\",<br/>",
+		"where the number is the newly-generated effect seed.<br/>",
+		"Remember that seed - if the game crashes, you'll need<br/>",
+		"to re-enable that entry."
+	    ],
+	    "types": [ "Gameplay" ],
+	    "supports": [ "BL2", "TPS", "AoDK" ],
+	    "latest": "0.1",
+	    "requirements": {
+		"Change Util": ">=0.1"
+	    }
+	},
+	{
+	    "name": "My Favorite",
+	    "tagline": "Never lose your stuff again.",
+	    "description": [
+		"Prevents selling or dropping starred items."
+	    ],
+	    "types": [ "Gameplay" ],
+	    "supports": [ "BL2", "TPS", "AoDK" ],
+	    "latest": "0.1"
+	},
+	{
+	    "name": "Storage Manager",
+	    "tagline": "Yet another bank and backpack expander.",
+	    "description": [
+		"Adds options to set your bank and backpack size, as well<br/>",
+		"as remove checks on backpack size.<br/>",
+		"<br/>",
+		"Credit goes to PureEvil139's BankManager, FromDarkHell's<br/>",
+		"BackpackManager, and Our Lord And Savior Gabe<br/>",
+		"Newell/OB4MA's Bank & Backpack Space Customizer."
+	    ],
+	    "types": [ "Gameplay" ],
+	    "supports": [ "BL2", "TPS", "AoDK" ],
+	    "latest": "1.0"
+	},
+	{
+	    "name": "Lilith Patch",
+	    "tagline": "Phasewalk without target in 55tumbl's Lilith mod.",
+	    "description": [
+		"Modifies the action skill of 55tumbl's excellent Lilith<br/>",
+		"mod to work more like BL1 Lilith's Phasewalk.  You no<br/>",
+		"longer need a target in the crosshairs.<br/>",
+		"<br/>",
+		"BTW, this mod is a case study of how NOT to fix a problem..."
+	    ],
+	    "types": [ "Gameplay" ],
+	    "supports": [ "BL2", "AoDK" ],
+	    "latest": "0.1"
+	},
+	{
+	    "name": "Change Util",
+	    "tagline": "Easily make changes to UE objects - and revert them.",
+	    "description": [
+		"Simplifies the process of modifying Unreal Engine<br/>",
+		"objects, and tracks changes so that they can be reverted<br/>",
+		"later."
+	    ],
+	    "types": [ "Library" ],
+	    "supports": [ "BL2", "TPS", "AoDK" ],
+	    "latest": "0.1"
+	}
+    ],
+    "defaults": {
+	"authors": "Milo",
+	"source": "https://github.com/ncalvin/Milo-BL2-SDK-Mods",
+	"license": "GNU GPLv3"
+    }
+}

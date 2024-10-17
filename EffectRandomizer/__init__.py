@@ -752,7 +752,8 @@ class SeededEffectRandomizer(SDKMod):
             if item.Name.startswith("Default__"):
                 continue
             item.InitializeFromDefinitionData(
-                item.DefinitionData, item.Owner)
+                Mods.Structs.ItemDefinitionData(item.DefinitionData),
+                item.Owner)
 
     def clean_weapons(self) -> None:
         """
@@ -762,7 +763,8 @@ class SeededEffectRandomizer(SDKMod):
             if weapon.Name.startswith("Default__"):
                 continue
             weapon.InitializeFromDefinitionData(
-                weapon.DefinitionData, weapon.Owner)
+                Mods.Structs.WeaponDefinitionData(weapon.DefinitionData),
+                weapon.Owner)
 
     def Enable(self) -> None:
         """

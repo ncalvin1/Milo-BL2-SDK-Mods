@@ -513,7 +513,7 @@ class RelicScrambler:
         Args:
             rng:  Random number generator.
         """
-        unrealsdk.Log("Scrambling relics and Oz kits.")
+        unrealsdk.Log("Scrambling relics.")
 
         # Grab all the existing slot effects and UIStatList entries.
         ui_stats = {}
@@ -550,7 +550,7 @@ class RelicScrambler:
         #   between UI entry and slot entry
         partlists = {
             part : unrealsdk.FindObject("ItemPartListDefinition", partlist)
-            for part, partlist in self.ENABLERS[Game.GetCurrent()].items()
+            for part, partlist in self.ENABLERS.items()
         }
         
         attribute_names = [name for name in ui_stats if name in slots]
@@ -688,7 +688,7 @@ class SeededEffectRandomizer(SDKMod):
     Version: str = "0.1"
     Author: str = "Milo"
     Description: str = ""
-    SupportedGames: Game = Game.BL2 | Game.TPS
+    SupportedGames: Game = Game.BL2 | Game.TPS | Game.AoDK
     Types: ModTypes = ModTypes.Gameplay
     SaveEnabledState: EnabledSaveType = EnabledSaveType.NotSaved
 
@@ -841,7 +841,7 @@ class EffectRandomizer(SDKMod):
     Description: str = "Scramble item effects!"
     Version: str = "0.1"
     Author: str = "Milo"
-    SupportedGames: Game = Game.BL2 | Game.TPS
+    SupportedGames: Game = Game.BL2 | Game.TPS | Game.AoDK
     Types: ModTypes = ModTypes.Gameplay
     SaveEnabledState: EnabledSaveType = EnabledSaveType.LoadOnMainMenu
     SettingsInputs: Dict[str,str] = { "Enter" : "Enable" }

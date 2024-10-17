@@ -38,6 +38,12 @@ Randomizer, this mod scrambles a player character's skills and class mods.
     - Known successes:
       - Roland works unchanged.  Axton's extra turret skills appear to stack
           on Roland's turret without issue.
-      - Lilith works, but only if "GD_Siren_Skills.Cataclysm.BlightPhoenix":5
+      - Lilith works, but only if "GD_Siren_Skills.Cataclysm.BlightPhoenix":6
           (which the mod turns into Lilith's Phoenix skill) is manually added to
 	  the SkillPool.wanted_skills sequence (__init__.py:1578).
+
+#H2 Known Issues
+  - Krieg's Buzzaxe Rampage does not work for other characters.
+  - Gunzerking works only partially in AoDK.  The offhand gun contributes
+      modifiers such as Moxxi healing, and makes firing noises, but does not
+      fire projectiles.

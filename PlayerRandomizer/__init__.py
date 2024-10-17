@@ -1880,7 +1880,7 @@ class PlayerRandomizer(SDKMod):
     Description: str = "Construct a random class!\nEvolved from Abahbob's nifty Cross Class Skill Randomizer."
     Version: str = "0.1"
     Author: str = "Milo"
-    SupportedGames: Game = Game.BL2 | Game.TPS
+    SupportedGames: Game = Game.BL2 | Game.TPS | Game.AoDK
     Types: ModTypes = ModTypes.Gameplay
     SaveEnabledState: EnabledSaveType = EnabledSaveType.LoadOnMainMenu
     SettingsInputs: Dict[str,str] = { "Enter" : "Enable" }

@@ -1475,10 +1475,10 @@ class SkillPool:
                 class variable.
         """
 
-        # We want behavior such that at 33% density, each tier has one skill,
+        # We want behavior such that at 34% density, each tier has one skill,
         # and at 100%, each tier has three skills.  Within that, we want to
         # weight earlier tiers more heavily than later ones.  Assign one skill
-        # to each tier, then scatter between 0 (33%) and 12 (100%) extras.
+        # to each tier, then scatter between 0 (34%) and 12 (100%) extras.
         # Note that the center skill is always filled.
         expected_skills = int(18 * skill_density / 100) - 6
         spots_left = 12
@@ -1974,7 +1974,7 @@ class PlayerRandomizer(SDKMod):
             Caption = "Skill Density",
             Description = "Selects how densely to populate the skill tree.",
             StartingValue = 63.0,
-            MinValue = 33.0,
+            MinValue = 34.0,
             MaxValue = 100.0,
             Increment = 1.0,
             IsHidden = False,

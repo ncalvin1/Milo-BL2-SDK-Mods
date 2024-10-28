@@ -1480,7 +1480,7 @@ class SkillPool:
         # weight earlier tiers more heavily than later ones.  Assign one skill
         # to each tier, then scatter between 0 (33%) and 12 (100%) extras.
         # Note that the center skill is always filled.
-        expected_skills = int(18 * (skill_density - 33) / 100)
+        expected_skills = int(18 * skill_density / 100) - 6
         spots_left = 12
         wanted = 0
         bias = [self.bias, 0, self.bias]
@@ -1498,7 +1498,7 @@ class SkillPool:
                 # Setting bias to 0 for the center slot guarantees a skill in
                 # each tier.
                 if slot == 1:
-                    # guarantee a spot
+                    # guarantee a skill in the middle
                     spots_left += 1
                     expected_skills += 1
                 if self.rng.randint(
@@ -1517,9 +1517,9 @@ class SkillPool:
                     if not dry_run:
                         tier_skills.append(skill.full_name)
                     tier_layout[slot] = True
+                    expected_skills -= 1
                 else:
                     tier_layout[slot] = False
-                    expected_skills -= 1
                 spots_left -= 1
 
             if dry_run:

@@ -1200,7 +1200,7 @@ class Branch:
         new_branch.full_name = branch.GetObjectName()
         new_branch.layout_name = branch.Layout.GetObjectName()
         for tier in branch.Tiers:
-            new_branch.skills.append([skill.GetObjectName() for skill in tier.Skills])
+            new_branch.skills.append([skill.GetObjectName() for skill in tier.Skills if not skill is None])
             new_branch.points_to_unlock.append(tier.PointsToUnlockNextTier)
         for tier in branch.Layout.Tiers:
             new_branch.layout.append([flag for flag in tier.bCellIsOccupied])

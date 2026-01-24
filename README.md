@@ -14,7 +14,7 @@ first.
      characteristics than the ones you've carefully memorized and built your
      strategy around.  Your Sham might not go past 50% absorb, while your
      relic provides useful regeneration and your common white Tediore pistol
-     acts like a laser.  Every seed's different!  *Requires the ChangeUtil mod.*
+     acts like a laser.  Every seed's different!
 
  - **MyFavoriteMod** keeps you from accidentally selling or dropping starred
      items.

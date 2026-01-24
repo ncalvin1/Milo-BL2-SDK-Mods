@@ -10,10 +10,11 @@
 		"Idea stolen from Abahbob's Cross Class Skill Randomizer.\n",
 		"\n",
 		"# Usage:\n",
-		"From the main menu, under Mods, enable \"Player\n",
-		"Randomizer (New Seed)\".  Bring up Options->Mods->Player\n",
-		"Randomizer to control how you want to randomize your\n",
-		"character.\n",
+		"First choose your player character.\n",
+		"From the main menu under Mods, enable \"Player\n",
+		"Randomizer\" and then escape back to the main menu.\n",
+		"Bring up Options->Mods->Player Randomizer to control how\n",
+		"you want to randomize your character.\n",
 		"  - **Skill Sources** sets which characters to pull skills\n",
 		"from.\n",
 		"  - **Additional Skills** lets you include skills that\n",
@@ -31,18 +32,21 @@
 		"points it takes to unlock the next skill tier.\n",
 		"  - **Randomize COMs** enables modifying the player's\n",
 		"classmods to contain skills from the new random tree.\n",
+		"  - **Reroll** chooses a new seed and changes the\n",
+		"player's assigned skills.\n",
 		"\n",
 		"Once you've made your choices, load your character and\n",
-		"start the session as usual.  The next time you launch\n",
-		"the game, the Mods menu will show a new enabled entry,\n",
-		"\"Effect Randomizer (#)\", where the number is the\n",
-		"newly-generated effect seed.  Remember that seed - if\n",
-		"the game crashes, you'll need to re-enable that entry."
+		"start the session as usual.  You should see new skills\n",
+		"on the skill page and subsets of those skills on any\n",
+		"usable classmod for that character.\n",
+		"Changes to settings in the in-game menu will have no\n",
+		"effect until after a return to the main menu.\n"
 	    ],
 	    "types": [ "Gameplay" ],
 	    "supports": [ "BL2", "TPS", "AoDK" ],
-	    "latest": "0.2",
+	    "latest": "2.0",
 	    "versions": {
+		"2.0" : "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/raw/refs/head/main/PlayerRandomizer/PlayerRandomizer.sdkmod",
 		"0.2" : "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/raw/refs/heads/main/PlayerRandomizer/PlayerRandomizer_v0.2.zip",
 		"0.1" : "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/raw/refs/heads/main/PlayerRandomizer/PlayerRandomizer_v0.1.zip"
 	    }
@@ -72,24 +76,20 @@
 		"*Note: relics are not supported on TPS.  Oz kits have\n",
 		"enough quirks already.*\n",
 		"# Usage:\n",
-		"From the main menu, under Mods, enable \"Effect\n",
-		"Randomizer (New Seed)\".  Bring up Options->Mods->Effect\n",
+		"From the main menu, select your character.\n",
+		"Under Mods, enable \"Effect Randomizer\" and escape back\n",
+		"to the main menu.  Bring up Options->Mods->Effect\n",
 		"Randomizer to enable the effects you want to change,\n",
-		"then load your character and start the session as usual.\n",
-		"The next time you launch the game, the Mods menu will\n",
-		"show a new enabled entry, \"Effect Randomizer (#)\",\n",
-		"where the number is the newly-generated effect seed.\n",
-		"Remember that seed - if the game crashes, you'll need\n",
-		"to re-enable that entry.\n"
+		"then start the session as usual.\n",
+		"Changes to settings in the in-game menu will have no\n",
+		"effect until after a return to the main menu.\n"
 	    ],
 	    "types": [ "Gameplay" ],
 	    "supports": [ "BL2", "TPS", "AoDK" ],
-	    "latest": "0.1",
+	    "latest": "2.0",
 	    "versions": {
+		"2.0": "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/raw/refs/heads/main/EffectRandomizer/EffectRandomizer.sdkmod",
 		"0.1": "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/raw/refs/heads/main/EffectRandomizer/EffectRandomizer_v0.1.zip"
-	    },
-	    "requirements": {
-		"Change Util": ">=0.1"
 	    }
 	},
 	{

@@ -1,0 +1,16 @@
+[project]
+name = "Effect Randomizer"
+version = "2.0"
+authors = [{ name = "milo" }]
+description = """\
+Effect Randomizer for Borderlands 2, TPS, and Attack on Dragon Keep.
+"""
+
+[project.urls]
+Changelog = "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/blob/master/EffectRandomizer/EffectRandomizer/Readme.md"
+
+[tool.sdkmod]
+name = "Effect Randomizer"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+coop_support = "HostOnly"
+download = "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/raw/refs/heads/main/EffectRandomizer/EffectRandomizer.sdkmod"

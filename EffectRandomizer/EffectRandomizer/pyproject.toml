@@ -12,5 +12,5 @@ Changelog = "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/blob/master/EffectRan
 [tool.sdkmod]
 name = "Effect Randomizer"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-coop_support = "HostOnly"
+coop_support = "Unknown"
 download = "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/raw/refs/heads/main/EffectRandomizer/EffectRandomizer.sdkmod"

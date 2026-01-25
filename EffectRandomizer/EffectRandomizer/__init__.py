@@ -229,7 +229,7 @@ class FiringModeScrambler:
                     name=f"{firing_mode.Name}_Split",
                     flags=0x4000,
                     template_obj=firing_mode)
-                split_firing_mode.TimerEvents = None
+                #split_firing_mode.TimerEvents = None
                 split_firing_mode.RicochetResponse.SplitNum = 0
                 ricochet_response = unrealsdk.make_struct(
                     "BulletEventResponse",
@@ -274,7 +274,7 @@ class FiringModeScrambler:
                         name=f"{firing_mode.Name}_Child{tick}",
                         flags=0x4000,
                         template_obj=firing_mode)
-                    split_firing_mode.TimerEvents = None
+                    #split_firing_mode.TimerEvents = None
                     response = unrealsdk.make_struct(
                         "BulletEventResponse",
                         SplitNum=num_children,

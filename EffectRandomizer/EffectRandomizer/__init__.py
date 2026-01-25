@@ -176,7 +176,6 @@ class FiringModeScrambler:
             rng:  Random number generator to use.
             changes:  Change manager to update and roll back UE objects.
         """
-        
         count = 0
         for firing_mode in unrealsdk.find_all("FiringModeDefinition"):
             if "Default__" in firing_mode.Name:
@@ -195,18 +194,18 @@ class FiringModeScrambler:
                 rng.randint(1, 20) == 1):
                 # Create a beam weapon.
                 fire_type = EWillowWeaponFireType.EWWFT_Beam
-                __changes.set_obj_direct(firing_mode, "FireType", fire_type)
-                __changes.set_obj_direct(firing_mode, "BeamChainDelay", 0.1)
+                changes.set_obj_direct(firing_mode, "FireType", fire_type)
+                changes.set_obj_direct(firing_mode, "BeamChainDelay", 0.1)
 
             # Speed ranges from 0 for rockets to 45K for snipers.
             speed = min(45000, 250 * pow(2, rng.randint(0, 8)))
-            __changes.set_obj_direct(firing_mode, "Speed", speed)
+            changes.set_obj_direct(firing_mode, "Speed", speed)
 
             # Give weapons a small chance to penetrate targets, B0re-style.
             penetrate = False
             if rng.randint(1, 60) == 1:
                 penetrate = True
-                __changes.set_obj_direct(firing_mode, "bPenetratePawn", True)
+                changes.set_obj_direct(firing_mode, "bPenetratePawn", True)
 
             num_ricochets = 0
             num_ricochet_splits = 0
@@ -217,11 +216,11 @@ class FiringModeScrambler:
                     num_ricochets = 1
                     num_ricochet_splits += rng.randint(1,8)
 
-            __changes.set_obj_direct(
+            changes.set_obj_direct(
                 firing_mode, "NumRicochets", num_ricochets)
             if num_ricochets > 0:
                 # Friction varies from 0 to 0.75 but has little effect.
-                __changes.set_obj_direct(
+                changes.set_obj_direct(
                     firing_mode, "RicochetFriction", 0.2 * rng.randint(0,4))
             if num_ricochet_splits > 0:
                 split_firing_mode = unrealsdk.construct_object(
@@ -241,7 +240,7 @@ class FiringModeScrambler:
                     bDetonate=False,
                     bRespawnTracer=True,
                     bUpdateBeamSourceLocation=False)
-                __changes.set_obj_direct(
+                changes.set_obj_direct(
                     firing_mode, "RicochetResponse", ricochet_response)
 
             # TimingEvents are the most complicated part.  Because splits should
@@ -302,7 +301,7 @@ class FiringModeScrambler:
                 )
                 events.append(event)
 
-            __changes.set_obj_direct(
+            changes.set_obj_direct(
                 firing_mode,
                 "TimerEvents",
                 events                

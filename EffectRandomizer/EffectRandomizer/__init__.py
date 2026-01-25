@@ -738,7 +738,7 @@ def clean_weapons() -> None:
     """
     Regenerates internal caches for all known weapons.
     """
-    for weapon in unrealsdk.FindAll("WillowWeapon"):
+    for weapon in unrealsdk.find_all("WillowWeapon"):
         if weapon.Name.startswith("Default__"):
             continue
         weapon.InitializeFromDefinitionData(

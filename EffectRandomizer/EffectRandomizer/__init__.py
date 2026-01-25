@@ -38,8 +38,6 @@ class ProjectileBehaviorScrambler:
         # Don't scramble grenade behaviors.  Grenades require correct
         # interaction between several pieces to operate, and nearly any
         # tweaking breaks them.
-        unrealsdk.Log("Scrambling projectile behaviors.")       
-
         projectiles = []
         dangerous_projectiles = set([
             "WillowGame.Default__ProjectileDefinition",

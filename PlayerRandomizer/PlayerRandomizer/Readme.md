@@ -64,6 +64,9 @@ Randomizer, this mod scrambles a player character's skills and class mods.
   - Start your game as usual.
 
 #H2 Known Issues
+  - Disable the PlayerRandomizer when starting a new character, and only
+      re-enable it after saving the new character at least once.  Otherwise the
+      game may hang.
   - Changes made through the in-game menu do not take effect until quitting
       to the main menu and re-entering the game.
   - Krieg's Buzzaxe Rampage does not work for other characters.

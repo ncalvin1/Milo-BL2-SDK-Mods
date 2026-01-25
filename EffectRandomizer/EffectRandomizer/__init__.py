@@ -229,7 +229,7 @@ class FiringModeScrambler:
                     name=f"{firing_mode.Name}_Split",
                     flags=0x4000,
                     template_obj=firing_mode)
-                split_firing_mode.TimingEvents = None
+                split_firing_mode.TimerEvents = None
                 split_firing_mode.RicochetResponse.SplitNum = 0
                 ricochet_response = unrealsdk.make_struct(
                     "BulletEventResponse",
@@ -243,7 +243,7 @@ class FiringModeScrambler:
                 changes.set_obj_direct(
                     firing_mode, "RicochetResponse", ricochet_response)
 
-            # TimingEvents are the most complicated part.  Because splits should
+            # TimerEvents are the most complicated part.  Because splits should
             # occur at a visible distance, their timing has to be calculated
             # relative to the projectile velocity.
             period = float(100 * rng.randint(1,4)) / speed
@@ -251,8 +251,8 @@ class FiringModeScrambler:
             tick = 0
             # Find any existing Behavior_Explode objects
             explosion = None
-            if not firing_mode.TimingEvents is None:
-                for event in firing_mode.TimingEvents:
+            if not firing_mode.TimerEvents is None:
+                for event in firing_mode.TimerEvents:
                     if event.Response.Behaviors is None:
                         continue
                     if len(event.Response.Behaviors) == 0:
@@ -274,7 +274,7 @@ class FiringModeScrambler:
                         name=f"{firing_mode.Name}_Child{tick}",
                         flags=0x4000,
                         template_obj=firing_mode)
-                    split_firing_mode.TimingEvents = None
+                    split_firing_mode.TimerEvents = None
                     response = unrealsdk.make_struct(
                         "BulletEventResponse",
                         SplitNum=num_children,

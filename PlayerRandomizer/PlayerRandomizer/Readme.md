@@ -1,14 +1,14 @@
-#H1 Character Randomizer
+# Character Randomizer
 An overengineered redesign and expansion of Abahbob's elegant Cross-Class Skill
 Randomizer, this mod scrambles a player character's skills and class mods.
 
-#H2 Features
+## Features
   - Change or randomize the action skill.
   - Choose which characters you want to borrow skills from.
   - Select how densely you want the skill trees populated.
   - Update class mods to augment the character's new skills.
 
-#H2 Notes
+## Notes
   - This does not work in multiplayer.
   - Action skill graphics and user interfaces are not updated.  Characters using
       Gunzerk will notice the offhand weapon is not visible, but it still fires
@@ -38,7 +38,7 @@ Randomizer, this mod scrambles a player character's skills and class mods.
       - Lilith works, but only if Blight Phoenix is added as a cheat.  Otherwise
           the game hangs as soon as one opens her skill trees.
 
-#H2 Usage
+## Usage
   - From the main menu, under Mods, enable 'Player Randomizer'.
   - Return to the main menu and select the character you want to have randomized
       skills.
@@ -63,7 +63,7 @@ Randomizer, this mod scrambles a player character's skills and class mods.
     - **Reroll** chooses a new set of random skills.
   - Start your game as usual.
 
-#H2 Known Issues
+## Known Issues
   - Disable the PlayerRandomizer when starting a new character, and only
       re-enable it after saving the new character at least once.  Otherwise the
       game may hang.

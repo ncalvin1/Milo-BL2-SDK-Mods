@@ -38,6 +38,30 @@ Randomizer, this mod scrambles a player character's skills and class mods.
       - Lilith works, but only if Blight Phoenix is added as a cheat.  Otherwise
           the game hangs as soon as one opens her skill trees.
 
+#H2 Usage
+  - From the main menu, under Mods, enable 'Player Randomizer'.
+  - Return to the main menu and select the character you want to have randomized
+      skills.
+  - Bring up Options->Mods->Player Randomizer to control how you want to
+      randomize your character.
+    - **Skill Sources** sets which characters to pull skills from.
+    - **Additional Skills** lets you include skills that should work despite
+       referencing the wrong Action Skill, as well as skills that may be
+       nonfunctional or badly broken.
+    - **Action Skill** determines which character's action skill to assign to
+       yours; note that graphics may be wrong for some character/skill
+       combinations, but the effects should still work correctly.
+    - **Skill Density** selects how much to fill in the skill tree - for
+       reference, BL2 character trees are about 60% full, while TPS trees
+       average 65% full.
+    - **Randomizing Tier Points** changes how many skill points it takes to
+       unlock the next skill tier.
+    - **Randomize COMs** enables modifying the player character's classmods to
+       contain skills from the new random tree.
+    - **Cheats** let you specify skills you want to appear in the player
+       character's skill tree and one random classmod.
+    - **Reroll** chooses a new set of random skills.
+  - Start your game as usual.
 
 #H2 Known Issues
   - Changes made through the in-game menu do not take effect until quitting

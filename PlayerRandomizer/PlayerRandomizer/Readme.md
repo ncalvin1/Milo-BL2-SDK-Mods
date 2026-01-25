@@ -19,9 +19,6 @@ Randomizer, this mod scrambles a player character's skills and class mods.
       the Aspis shield, or Digi-Jacks early to reduce cooldown.  (And, yes,
       Gaige breathing like Salvador when she's gunzerking is one of the more
       disturbing things I've encountered in a game.)
-  - The mod may hang if it runs out of skills to choose for a character.
-      If you limit Zer0 to just his own skills, and then set the skill density
-      higher than 55% (30 expected skills), skill selection will never complete.
   - The mod does not work with custom characters as anything other than the
       main character.  It may work with custom characters as the main character,
       but there are no guarantees.  In particular, skills that have been

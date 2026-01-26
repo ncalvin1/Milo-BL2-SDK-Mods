@@ -29,5 +29,13 @@ and start the session as usual.  Changes to settings
 in the in-game menu will have no effect until after
 a return to the main menu.
 
+# Changelog:
+  - **v2.0**:
+    - Rewrote to support Borderlands 2 SDK 3.07.
+    - Dropped radio-button seed management in favor of a 'Reroll' option.
+    - Removed dependency on the ChangeUtil library.
+  - **v0.1**:
+    - Initial release.
+
 
 

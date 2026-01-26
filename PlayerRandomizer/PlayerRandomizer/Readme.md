@@ -74,5 +74,14 @@ Randomizer, this mod scrambles a player character's skills and class mods.
       modifiers such as Moxxi healing, and makes firing noises, but does not
       fire projectiles.
 
+## Changelog
+  - **v2.0**:
+    - Rewrote to support Borderlands SDK 3.07.
+    - Replaced radio-button seed management with a 'Reroll' option.
+    - Added a 'Cheats' menu to force specific skills to show up.
+  - **v0.2**:
+    - Bugfix release.
+  - **v0.1**:
+    - Initial release.
 
 

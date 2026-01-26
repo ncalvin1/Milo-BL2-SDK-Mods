@@ -1,0 +1,16 @@
+[project]
+name = "My Favorite Mod"
+version = "2.0"
+authors = [{ name = "milo" }]
+description = """\
+Block dropping starred items in Borderlands 2, TPS, and Attack on Dragon Keep.
+"""
+
+[project.urls]
+Changelog = "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/blob/master/MyFavoriteMod/MyFavoriteMod/Readme.md"
+
+[tool.sdkmod]
+name = "My Favorite Mod"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+coop_support = "Unknown"
+download = "https://raw.githubusercontent.com/ncalvin1/Milo-BL2-SDK-Mods/refs/heads/main/MyFavoriteMod/MyFavoriteMod.sdkmod"

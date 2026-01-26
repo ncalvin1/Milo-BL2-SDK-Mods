@@ -14,4 +14,4 @@ Changelog = "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/blob/master/PlayerRan
 name = "Player Randomizer"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
 coop_support = "Unknown"
-download = "https://github.com/ncalvin1/Milo-BL2-SDK-Mods/raw/refs/heads/main/PlayerRandomizer/PlayerRandomizer.sdkmod"
+download = "https://raw.githubusercontent.com/ncalvin1/Milo-BL2-SDK-Mods/refs/heads/main/PlayerRandomizer/PlayerRandomizer.sdkmod"

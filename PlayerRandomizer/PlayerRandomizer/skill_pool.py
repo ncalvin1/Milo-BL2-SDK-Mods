@@ -319,10 +319,12 @@ class SkillPool:
             desired_char = characters.Character.from_name(action_skill)
             if desired_char is None:
                 unrealsdk.logging.warning(f"Desired class {action_skill} is not installed.  Choosing a random action skill instead.")
-                desired_char = self.rng.choice(list(enabled_sources))
+                desired_char = characters.Character.from_name(self.rng.choice(
+                    list(enabled_sources)))
             elif not desired_char.character_name in enabled_sources:
                 unrealsdk.logging.warning(f"{desired_char.character_name} is not a currently-enabled class.  Choosing a random action skill instead.")
-                desired_char = self.rng.choice(list(enabled_sources))
+                desired_char = characters.Character.from_name(self.rng.choice(
+                    list(enabled_sources))
 
         if len(self.skill_order) * 100.0 < 54.0 * skill_density:
             skill_density = 100.0 * float(len(self.skill_order)) / 54.0

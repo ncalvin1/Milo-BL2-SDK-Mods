@@ -75,6 +75,8 @@ Randomizer, this mod scrambles a player character's skills and class mods.
       fire projectiles.
 
 ## Changelog
+  - **v2.01**:
+    - Fixed random action skill selection producing a Set subscript exception.
   - **v2.0**:
     - Rewrote to support Borderlands SDK 3.07.
     - Replaced radio-button seed management with a 'Reroll' option.

@@ -212,6 +212,10 @@ class SkillPool:
 
         Returns:
             A random Skill.
+
+        Throws:
+            IndexError if there are no skills in the pool.
+            ValueError if there are no more usable skills in the pool.
         """
         while True:
             skill_name = self.rng.choices(
@@ -228,13 +232,20 @@ class SkillPool:
                     skill_name in dep.dependers):
                     # Since the skill is missing a dependency, pick one of the
                     # dependencies instead.
-                    skill_name = self.rng.choice(dep.providers)
-                    if skill_name in self.skills:
-                        return self.mark_used(self.skills[skill_name],
+                    dep_name = self.rng.choice(dep.providers)
+                    if dep_name in self.skills:
+                        return self.mark_used(self.skills[dep_name],
                                               hidden_skills,
                                               branch_idx)
                     # Dependency is not in the skill pool.  It's probably an
-                    # action skill for a different character.  Skip.
+                    # action skill for a different character.  Remove the
+                    # dependent skill from the pool and try again.
+                    try:
+                        idx = self.skill_order.index(skill_name)
+                        self.new_branches[branch_idx].skill_weights[idx] = 0
+                    except ValueError:
+                        # this should be unreachable
+                        pass
                     break
             else:
                 return self.mark_used(self.skills[skill_name],
@@ -309,22 +320,22 @@ class SkillPool:
             if current_char is None:
                 unrealsdk.logging.warning("Default is not a currently-enabled class.  Choosing a random action skill instead.")
                 desired_char = characters.Character.from_name(self.rng.choice(
-                    list(enabled_sources)))
+                    tuple(enabled_sources)))
             else:
                 desired_char = current_char
         elif action_skill == "Random":
             desired_char = characters.Character.from_name(self.rng.choice(
-                list(enabled_sources)))
+                tuple(enabled_sources)))
         else:
             desired_char = characters.Character.from_name(action_skill)
             if desired_char is None:
                 unrealsdk.logging.warning(f"Desired class {action_skill} is not installed.  Choosing a random action skill instead.")
                 desired_char = characters.Character.from_name(self.rng.choice(
-                    list(enabled_sources)))
+                    tuple(enabled_sources)))
             elif not desired_char.character_name in enabled_sources:
                 unrealsdk.logging.warning(f"{desired_char.character_name} is not a currently-enabled class.  Choosing a random action skill instead.")
                 desired_char = characters.Character.from_name(self.rng.choice(
-                    list(enabled_sources)))
+                    tuple(enabled_sources)))
 
         if len(self.skill_order) * 100.0 < 54.0 * skill_density:
             skill_density = 100.0 * float(len(self.skill_order)) / 54.0
@@ -417,7 +428,7 @@ class SkillPool:
                         branch.skill_weights[cheat_idx] = branch.total_weight / (3 * (cheat_tier - tier) + 2 - branch.idx)
             except ValueError:
                 unrealsdk.logging.error(f"Desired skill {cheat_name} is not in the pool.")
-        
+
         # Choose slot count based on remaining density.  We want a wider set
         # of skills at the base of the tree, narrowing to the tip, with no
         # empty tiers blocking skill progression.
@@ -433,20 +444,24 @@ class SkillPool:
             skill_count = 2 if (3 * (expected_density - 0.33) > self.rng.random()) else 1
         elif expected_density > 0:
             skill_count = 1
-        tier_layout : List[bool] = [
-            skill_count > 1, skill_count & 1 > 0, skill_count > 1
-        ]
 
         max_points : int = 0
         total_points : int = 0
         tier_skills : List[str] = []
         for idx in range(skill_count):
-            skill = self.get_next_skill(hidden_skills, branch.idx)
-            max_points = max(max_points, skill.max_grade)
-            total_points += skill.max_grade
-            tier_skills.append(skill.full_name)
+            try:
+                skill = self.get_next_skill(hidden_skills, branch.idx)
+                max_points = max(max_points, skill.max_grade)
+                total_points += skill.max_grade
+                tier_skills.append(skill.full_name)
+            except (IndexError, ValueError):
+                # Hmm, ran out of skills.
+                skill_count = idx
+                break
 
-        branch.layout[tier] = tier_layout
+        branch.layout[tier] = [
+            skill_count > 1, skill_count & 1 > 0, skill_count > 1
+        ]
         branch.skills[tier] = tier_skills
         if randomize_tiers:
             branch.points_to_unlock[tier] = self.rng.randint(

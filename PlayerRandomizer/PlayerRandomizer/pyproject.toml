@@ -1,6 +1,6 @@
 [project]
 name = "Player Randomizer"
-version = "2.01"
+version = "2.02"
 authors = [{ name = "milo" }]
 description = """\
 Play Borderlands 2, TPS, or Attack on Dragon Keep with randomized skills and

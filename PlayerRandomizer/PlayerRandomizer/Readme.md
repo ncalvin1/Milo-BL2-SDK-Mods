@@ -75,6 +75,8 @@ Randomizer, this mod scrambles a player character's skills and class mods.
       fire projectiles.
 
 ## Changelog
+  - **v2.02**:
+    - Fixed hang if randomizer ran out of skills before satisfying density req.
   - **v2.01**:
     - Fixed random action skill selection producing a Set subscript exception.
   - **v2.0**:
